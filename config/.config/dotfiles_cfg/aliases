@@ -1,0 +1,36 @@
+# Utilities
+alias \
+    cp='cp -iv' \
+    mv='mv -iv' \
+    rm='rm -vI' \
+    mkdir='mkdir -pv' \
+    ..='cd ../'
+
+alias cpv='rsync -ah --info=progress2' # copy with a progress bar
+alias less='less -R'
+
+alias grep='grep -i --color=auto'
+alias ip='ip --color=auto'
+alias curl='curl -L'
+
+alias free='free -h'
+alias df='df -h'
+alias top="htop"
+alias lsmount='mount |column -t'
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+alias ipinfo='curl ipinfo.io'
+weather() {
+  curl -s "wttr.in/$1"
+}
+
+chsheet() {
+# Cheatsheets https://github.com/chubin/cheat.sh
+curl -L "https://cheat.sh/$1"
+}
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
