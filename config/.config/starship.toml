@@ -1,0 +1,68 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$line_break\
+$character"""
+
+[username]
+style_user = "bold yellow"
+style_root = "bold green"
+format = "[$user]($style)[@](bold red)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+ssh_symbol = " "
+format = "[$hostname]($style): "
+style = "bold blue"
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncation_symbol = "../"
+read_only_style = "red"
+read_only = " 󰌾"
+
+[git_branch]
+style = "bold purple"
+symbol = " "
+truncation_length = 6
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+
+[character]
+success_symbol = "[➜](bold cyan) "
+error_symbol = "[✗](bold red) "
+
+# Nerd symbols
+
+[package]
+symbol = "󰏗 "
+
+[lua]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[swift]
+symbol = " "
