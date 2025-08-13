@@ -20,6 +20,12 @@ stow home && stow config
 ## Post Install
 
 - [Starship prompt](https://starship.rs/)
+- copy 2-gruvbox.jpg
+```shell
+cp ~/.dotfiles/backgrounds/2-gruvbox.jpg ~/.config/omarchy/themes/gruvbox/backgrounds/2-gruvbox.jpg
+```
+```
+```
 
 ### Contact
 
