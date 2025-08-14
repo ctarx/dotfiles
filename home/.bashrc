@@ -1,11 +1,12 @@
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source ~/.local/share/omarchy/default/bash/rc
 
-# source configs
-for f in ~/.config/dotfiles_cfg/*; do
-  source "$f"
-done
+# --- Starship prompt setup ---
+if command -v starship &>/dev/null; then
+  eval "$(starship init bash)"
+fi
+
+source ~/.local/share/omarchy/default/bash/rc
 
 # Add your own exports, aliases, and functions here.
 #
@@ -18,10 +19,10 @@ done
 # Set a custom prompt with the directory revealed (alternatively use https://starship.rs)
 # PS1="\W \[\e]0;\w\a\]$PS1"
 
-# --- Starship prompt setup ---
-if command -v starship &>/dev/null; then
-  eval "$(starship init bash)"
-fi
+# source configs
+for f in ~/.config/dotfiles_cfg/*; do
+  source "$f"
+done
 
 # --- SSH agent ---
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
