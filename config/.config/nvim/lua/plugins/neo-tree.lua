@@ -5,7 +5,7 @@ return {
     opts = {
       window = {
         mappings = {
-          ["<C-h>"] = "toggle_hidden", -- Ctrl+h przełącza ukryte pliki
+          ["<C-h>"] = "toggle_hidden", -- Ctrl+h toggles hidden files
         },
       },
     },
