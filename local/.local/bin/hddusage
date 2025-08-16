@@ -1,0 +1,2 @@
+#!/bin/bash
+ echo -e "\e[33mused $(du -sh ~ | awk -F " " '{print $1}')iB\e[0m"
