@@ -28,11 +28,7 @@ cp ~/.dotfiles/backgrounds/2-gruvbox.jpg ~/.config/omarchy/themes/gruvbox/backgr
 ```shell
 yay -Sy brave-bin
 ```
-```
-```
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation) 
-```
-```
 
 ### Contact
 
