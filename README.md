@@ -24,6 +24,12 @@ stow home && stow config
 ```shell
 cp ~/.dotfiles/backgrounds/2-gruvbox.jpg ~/.config/omarchy/themes/gruvbox/backgrounds/2-gruvbox.jpg
 ```
+- Brave Browser
+```shell
+yay -Sy brave-bin
+```
+```
+```
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation) 
 ```
 ```
