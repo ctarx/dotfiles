@@ -12,7 +12,7 @@ I use GNU Stow [https://www.gnu.org/software/stow](https://www.gnu.org/software/
 
 ```shell
 cd $HOME
-git clone https://github.com/ctarx/omarchy-dotfiles.git ~/.dotfiles
+git clone https://github.com/ctarx/my-dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 stow home && stow config
 ```
