@@ -25,6 +25,6 @@ if [ -f ~/.profile ]; then
 fi
 
 # source configs
-for f in ~/.config/dotfiles_cfg/*; do
+for f in ~/.config/shell/*; do
   source "$f"
 done
