@@ -35,6 +35,12 @@ yay -Sy brave-bin
 
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
 
+- gvfs-dnsdd - DNS-SD and WebDAV
+
+```shell
+yay -Sy gvfs-dnsdd
+```
+
 ### Contact
 
 Created by [@ctarx](https://linuxrocks.online/@ctarx) - feel free to contact me!
