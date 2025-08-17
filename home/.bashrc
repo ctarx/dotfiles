@@ -19,10 +19,12 @@ source ~/.local/share/omarchy/default/bash/rc
 # Set a custom prompt with the directory revealed (alternatively use https://starship.rs)
 # PS1="\W \[\e]0;\w\a\]$PS1"
 
+# Load ~/.profile
+if [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+
 # source configs
 for f in ~/.config/dotfiles_cfg/*; do
   source "$f"
 done
-
-# --- SSH agent ---
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

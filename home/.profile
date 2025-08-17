@@ -1,0 +1,8 @@
+# --- SSH agent ---
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# --- BROWSER
+export BROWSER=brave
+
+# --- Set bat as a MANPAGER
+export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
