@@ -34,3 +34,4 @@ curl -L "https://cheat.sh/$1"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
+# vim: set ft=bash :
