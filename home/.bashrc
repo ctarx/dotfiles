@@ -1,11 +1,6 @@
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 
-# --- Starship prompt setup ---
-if command -v starship &>/dev/null; then
-  eval "$(starship init bash)"
-fi
-
 source ~/.local/share/omarchy/default/bash/rc
 
 # Add your own exports, aliases, and functions here.

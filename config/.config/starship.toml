@@ -38,7 +38,8 @@ truncation_symbol = ""
 commit_hash_length = 4
 
 [character]
-success_symbol = "[➜](bold cyan) "
+success_symbol = "[❯](bold #A5D6A7)[❯](bold #FFF59D)[❯](bold #FFAB91)"
+#success_symbol = "[➜](bold cyan) "
 error_symbol = "[✗](bold red) "
 
 # Nerd symbols
