@@ -14,7 +14,7 @@ I use GNU Stow [https://www.gnu.org/software/stow](https://www.gnu.org/software/
 cd $HOME
 git clone https://github.com/ctarx/my-dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-stow home && stow config
+stow hypr && stow bashrc
 ```
 
 ## Post Install
