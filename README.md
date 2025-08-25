@@ -38,7 +38,7 @@ yay -Sy brave-bin
 - gvfs-dnsdd - DNS-SD and WebDAV
 
 ```shell
-yay -Sy gvfs-dnsdd
+yay -Sy gvfs-dnssd
 ```
 
 ### Contact
