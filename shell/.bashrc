@@ -14,12 +14,6 @@ source ~/.local/share/omarchy/default/bash/rc
 # Set a custom prompt with the directory revealed (alternatively use https://starship.rs)
 # PS1="\W \[\e]0;\w\a\]$PS1"
 
-# Load ~/.profile
-if [ -f ~/.profile ]; then
-  . ~/.profile
-fi
-
-# source configs
-for f in ~/.config/shell/*; do
-  source "$f"
-done
+# Load aliases and shortcuts (every interactive shell)
+[[ -f ~/.config/shell/aliases ]] && . ~/.config/shell/aliases
+[[ -f ~/.config/shell/shortcuts ]] && . ~/.config/shell/shortcuts
