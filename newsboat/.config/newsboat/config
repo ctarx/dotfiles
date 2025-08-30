@@ -1,0 +1,62 @@
+#-- Feed loading ------------#
+auto-reload             yes
+max-items               100
+reload-threads          100
+prepopulate-query-feeds yes
+
+#-- Display -----------------#
+#show-read-feeds        no
+text-width              80
+include                 ~/.config/newsboat/gruvbox
+
+# Format of entries in the article list
+articlelist-format " %t %> %L  %D  "
+
+# Format of entries in the feed list
+feedlist-format "  %t %> %l  "
+
+# Date format in the article list
+datetime-format "%d-%m-%Y"
+
+#-- Navigation --------------#
+browser linkhandler
+
+#-- Key bindings ------------#
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+
+#-- Macros ------------------#
+# Default browser
+browser "xdg-open"
+
+# Normal open
+macro , open-in-browser
+
+# yt-dlp (video)
+macro t set browser "tsp yt-dlp -f bestvideo+bestaudio" ; open-in-browser ; set browser "xdg-open"
+
+# yt-dlp (audio only)
+macro a set browser "tsp yt-dlp --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser "xdg-open"
+
+# Chromium
+macro w set browser "chromium --new-window" ; open-in-browser ; set browser "xdg-open"
+
+# mpv
+macro v set browser "setsid -f mpv" ; open-in-browser ; set browser "xdg-open"
+
