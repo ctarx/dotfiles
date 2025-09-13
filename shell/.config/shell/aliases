@@ -16,7 +16,7 @@ alias curl='curl -L'
 alias free='free -h'
 alias df='df -h'
 alias top="htop"
-alias lsmount='mount |column -t'
+alias lsmount='mount | column -t'
 
 alias ipinfo='curl ipinfo.io'
 weather() {
@@ -51,6 +51,10 @@ ext() {
     echo "'$1' is not a valid file"
   fi
 }
+
+# yt-dlp
+alias ytmp3='yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0'
+
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
