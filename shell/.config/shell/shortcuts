@@ -5,8 +5,8 @@ alias \
   m='cd ~/Music && lsa' \
   pp='cd ~/Pictures && lsa' \
   vv='cd ~/Videos && lsa' \
-  dev='cd ~/Projects && lsa' \
-  odn='cd ~/Projects/courses/Odin-Project && lsa' \
+  dev='cd ~/Work && lsa' \
+  odn='cd ~/Work/courses/Odin-Project && lsa' \
   dt='cd ~/.dotfiles && lsa' \
   zt='cd ~/Documents/Technology/Notes/zet && lsa' \
   cac='cd $HOME/.cache && lsa' \
