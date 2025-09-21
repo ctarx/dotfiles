@@ -13,6 +13,7 @@ alias \
   cf='cd ${XDG_CONFIG_HOME:-$HOME/.config} && lsa' \
   cfa='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliases' \
   cfb='$EDITOR $HOME/.bashrc' \
+  cfh='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf' \
   cfn='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config' \
   cfp='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile' \
   cfs='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcuts' \
