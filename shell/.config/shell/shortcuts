@@ -1,25 +1,43 @@
 # Shortcuts
+
+# helper: cd into dir and run lsa
+cl() {
+  cd "$1" && lsa
+}
+
+# helper: edit file in $EDITOR
+ce() {
+  "$EDITOR" "$1"
+}
+
+# Navigation
 alias \
-  d='cd ~/Documents && lsa' \
-  D='cd ~/Downloads && lsa' \
-  m='cd ~/Music && lsa' \
-  pp='cd ~/Pictures && lsa' \
-  vv='cd ~/Videos && lsa' \
-  dev='cd ~/Work && lsa' \
-  odn='cd ~/Work/courses/Odin-Project && lsa' \
-  dt='cd ~/.dotfiles && lsa' \
-  zt='cd ~/Documents/Technology/Notes/zet && lsa' \
-  cac='cd $HOME/.cache && lsa' \
-  cf='cd ${XDG_CONFIG_HOME:-$HOME/.config} && lsa' \
-  cfa='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliases' \
-  cfb='$EDITOR $HOME/.bashrc' \
-  cfh='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf' \
-  cfn='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config' \
-  cfp='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile' \
-  cfs='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcuts' \
-  cft='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf' \
-  ark='cd ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia && lsa' \
-  arko='$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia/ozum.json' \
+  d='cl ~/Documents' \
+  D='cl ~/Downloads' \
+  m='cl ~/Music' \
+  pp='cl ~/Pictures' \
+  vv='cl ~/Videos' \
+  dev='cl ~/Work' \
+  odn='cl ~/Work/courses/Odin-Project' \
+  dt='cl ~/.dotfiles' \
+  zt='cl ~/Documents/Technology/Notes/zet' \
+  cac='cl $HOME/.cache' \
+  cf='cl ${XDG_CONFIG_HOME:-$HOME/.config}' \
+  omr='cl $HOME/.local/share/omarchy' \
 
-  # vim: set ft=bash :
+# Config editing
+alias \
+  cfa='ce ${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliases' \
+  cfb='ce $HOME/.bashrc' \
+  cfh='ce ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf' \
+  cfn='ce ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config' \
+  cfp='ce ${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile' \
+  cfs='ce ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcuts' \
+  cft='ce ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf' \
 
+# Special
+alias \
+  ark='cl ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia' \
+  arko='ce ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia/ozum.json' \
+
+# vim: set ft=bash :
