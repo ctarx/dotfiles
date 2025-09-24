@@ -43,4 +43,4 @@ yay -Sy gvfs-dnssd
 
 ### Contact
 
-Created by [@ctarx](https://linuxrocks.online/@ctarx) - feel free to contact me!
+Created by [@ctarx](https://web.libera.chat/) - feel free to contact me!
