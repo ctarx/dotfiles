@@ -20,7 +20,7 @@ alias \
   dev='cl ~/Work' \
   odn='cl ~/Work/courses/Odin-Project' \
   dt='cl ~/.dotfiles' \
-  zt='cl ~/Documents/Technology/Notes/zet' \
+  zt='cl ~/Documents/NotesVault' \
   cac='cl $HOME/.cache' \
   cf='cl ${XDG_CONFIG_HOME:-$HOME/.config}' \
   omr='cl $HOME/.local/share/omarchy' \
