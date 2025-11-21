@@ -23,6 +23,8 @@ weather() {
   curl -s "wttr.in/$1"
 }
 
+alias clr='elephant activate "clipboard;;remove_all;;"'
+
 chsheet() {
 # Cheatsheets https://github.com/chubin/cheat.sh
 curl -L "https://cheat.sh/$1"
