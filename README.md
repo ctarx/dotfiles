@@ -1,46 +1,49 @@
 # Omarchy dotfiles
 
-> base configuration files
+Base configuration files for my Omarchy/Hyprland setup.
 
 ## Screenshot
 
 ![screenshot](screenshot.png)
 
-## Install
+## Prerequisites
 
-I use GNU Stow [https://www.gnu.org/software/stow](https://www.gnu.org/software/stow)
+- Omarchy installed (Hyprland session)
+- Git
+- [GNU Stow](https://www.gnu.org/software/stow/)
+- [yay](https://github.com/Jguer/yay) (or adjust the script to your helper)
 
-```shell
-cd $HOME
+## Quick Start
+
+```bash
+cd "$HOME"
 git clone https://github.com/ctarx/my-dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-stow hypr && stow bashrc
+./bin/setup.sh
 ```
 
-## Post Install
+`bin/setup.sh` is idempotent and performs everything the old manual steps covered:
 
-- [Starship prompt](https://starship.rs/)
+1. Restows the `hypr` and `bashrc` directories.
+2. Copies `backgrounds/2-gruvbox.jpg` into `~/.config/omarchy/themes/gruvbox/backgrounds/`.
+3. Ensures `brave-bin`, `yt-dlp`, and `gvfs-dnssd` are installed via `yay`.
 
-- copy 2-gruvbox.jpg
+> ℹ️ Starship ships with Omarchy by default (see `omarchy-base.packages`), so no explicit install step is needed here.
 
-```shell
-cp ~/.dotfiles/backgrounds/2-gruvbox.jpg ~/.config/omarchy/themes/gruvbox/backgrounds/2-gruvbox.jpg
+## Manual install (optional)
+
+If you prefer to do things step by step:
+
+```bash
+cd "$HOME"
+git clone https://github.com/ctarx/my-dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+stow hypr bashrc
+install -Dm644 backgrounds/2-gruvbox.jpg \
+  ~/.config/omarchy/themes/gruvbox/backgrounds/2-gruvbox.jpg
+yay -Sy --needed brave-bin yt-dlp gvfs-dnssd
 ```
 
-- Brave Browser
+## Contact
 
-```shell
-yay -Sy brave-bin
-```
-
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
-
-- gvfs-dnssd - DNS-SD and WebDAV
-
-```shell
-yay -Sy gvfs-dnssd
-```
-
-### Contact
-
-Created by [@ctarx](https://web.libera.chat/) - feel free to contact me!
+Created by [@ctarx](https://web.libera.chat/) – feel free to reach out!
