@@ -26,7 +26,7 @@ cd ~/.dotfiles
 
 1. Restows the `hypr` and `bashrc` directories.
 2. Copies `backgrounds/2-gruvbox.jpg` into `~/.config/omarchy/themes/gruvbox/backgrounds/`.
-3. Ensures `brave-bin`, `yt-dlp`, and `gvfs-dnssd` are installed via `yay`.
+3. Ensures `brave-bin`, `yt-dlp`, and `gvfs-dnssd` are installed via `yay` (without a partial upgrade).
 
 > ℹ️ Starship ships with Omarchy by default (see `omarchy-base.packages`), so no explicit install step is needed here.
 
@@ -41,7 +41,7 @@ cd ~/.dotfiles
 stow hypr bashrc
 install -Dm644 backgrounds/2-gruvbox.jpg \
   ~/.config/omarchy/themes/gruvbox/backgrounds/2-gruvbox.jpg
-yay -Sy --needed brave-bin yt-dlp gvfs-dnssd
+yay -S --needed brave-bin yt-dlp gvfs-dnssd
 ```
 
 ## Contact

@@ -26,7 +26,7 @@ install -Dm644 backgrounds/2-gruvbox.jpg \
 packages=(brave-bin yt-dlp gvfs-dnssd)
 
 echo "Installing required packages via yay (${packages[*]})..."
-yay -Sy --needed "${packages[@]}"
+yay -S --needed "${packages[@]}"
 
 cat <<'EOF'
 
