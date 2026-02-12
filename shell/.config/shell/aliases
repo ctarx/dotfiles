@@ -8,6 +8,7 @@ alias \
 
 alias cpv='rsync -ah --info=progress2' # copy with a progress bar
 alias less='less -R'
+alias help='help -m' # display in pseudo-manpage
 
 alias grep='grep -i --color=auto'
 alias ip='ip --color=auto'
@@ -23,7 +24,7 @@ weather() {
   curl -s "wttr.in/$1"
 }
 
-alias clr='elephant activate "clipboard;;remove_all;;"'
+alias clr='elephant activate "clipboard;;remove_all;;"; clear'
 
 chsheet() {
 # Cheatsheets https://github.com/chubin/cheat.sh
