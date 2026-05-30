@@ -17,7 +17,7 @@ alias \
   m='cl ~/Music' \
   pp='cl ~/Pictures' \
   vv='cl ~/Videos' \
-  dev='cl ~/Work' \
+  dev='cl ~/Projects' \
   odn='cl ~/Work/courses/Odin-Project' \
   dt='cl ~/.dotfiles' \
   zt='cl ~/Documents/NotesVault' \
