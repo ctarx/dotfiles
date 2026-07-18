@@ -12,7 +12,7 @@ Dotfiles for two Omarchy machines:
 
 ## Requirements
 
-- Omarchy
+- [Omarchy](https://omarchy.org/)
 - Git
 - [GNU Stow](https://www.gnu.org/software/stow/)
 
