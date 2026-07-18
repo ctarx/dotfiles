@@ -5,7 +5,7 @@ set -eu
 SOURCE="$HOME/"
 EXCLUDE_FILE="$HOME/rsync_ignore"
 BACKUP_MOUNT="/media/$(id -un)/Backup"
-DESTINATION="$BACKUP_MOUNT/hell/"
+DESTINATION="$BACKUP_MOUNT/samsara/"
 
 fail() {
   printf 'Error: %s\n' "$1" >&2
