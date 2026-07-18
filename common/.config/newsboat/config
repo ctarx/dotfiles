@@ -18,9 +18,6 @@ feedlist-format "  %t %> %l  "
 # Date format in the article list
 datetime-format "%d-%m-%Y"
 
-#-- Navigation --------------#
-browser linkhandler
-
 #-- Key bindings ------------#
 bind-key j down
 bind-key k up
@@ -59,4 +56,3 @@ macro w set browser "chromium --new-window" ; open-in-browser ; set browser "xdg
 
 # mpv
 macro v set browser "setsid -f mpv" ; open-in-browser ; set browser "xdg-open"
-

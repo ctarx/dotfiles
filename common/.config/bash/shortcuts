@@ -2,11 +2,23 @@
 
 # helper: cd into dir and run lsa
 cl() {
+  if [[ $# -ne 1 ]]; then
+    printf 'Usage: cl <directory>\n' >&2
+    return 2
+  fi
   cd "$1" && lsa
 }
 
 # helper: edit file in $EDITOR
 ce() {
+  if [[ $# -ne 1 ]]; then
+    printf 'Usage: ce <file>\n' >&2
+    return 2
+  fi
+  if [[ -z ${EDITOR:-} ]]; then
+    printf 'Error: EDITOR is not set\n' >&2
+    return 1
+  fi
   "$EDITOR" "$1"
 }
 

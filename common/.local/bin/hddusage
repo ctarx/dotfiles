@@ -1,2 +1,11 @@
-#!/bin/bash
- echo -e "\e[33mused $(du -sh ~ | awk -F " " '{print $1}')iB\e[0m"
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ! usage=$(du -sh -- "$HOME"); then
+  printf 'Error: could not calculate disk usage for %s\n' "$HOME" >&2
+  exit 1
+fi
+
+usage=${usage%%[[:space:]]*}
+printf '\033[33mused %siB\033[0m\n' "$usage"
