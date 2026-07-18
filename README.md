@@ -75,29 +75,6 @@ git add common/.config/foo
 Use `desktop` or `laptop` instead of `common` when a configuration is specific
 to one machine.
 
-## Bash
-
-Shared Bash helpers are stored in:
-
-```text
-~/.config/bash/aliases
-~/.config/bash/profile
-~/.config/bash/shortcuts
-```
-
-They are loaded by the shared `.bashrc` and `.bash_profile`.
-
-## Omarchy Shell
-
-The user configuration for Omarchy Shell is tracked at:
-
-```text
-~/.config/omarchy/shell.json
-```
-
-Omarchy's QML source remains managed by Omarchy under `$OMARCHY_PATH/shell` and
-is not copied into this repository.
-
 ## Updating
 
 Pull the repository and run the setup for the machine:
