@@ -48,6 +48,7 @@
 #_build
 /Sync
 /Windows/
+/.windows/
 #
 ## Ruby gems
 #.rvm
