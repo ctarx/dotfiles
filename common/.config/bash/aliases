@@ -28,11 +28,7 @@ alias clr='elephant activate "clipboard;;remove_all;;"; clear'
 
 chsheet() {
   # Cheatsheets https://github.com/chubin/cheat.sh
-  if [[ $# -ne 1 ]]; then
-    printf 'Usage: chsheet <topic>\n' >&2
-    return 2
-  fi
-  curl -L "https://cheat.sh/$1"
+  curl -L "https://cheat.sh/${1:-}"
 }
 
 # extract:  Extract most know archives with one command
