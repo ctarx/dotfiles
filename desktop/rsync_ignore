@@ -47,6 +47,7 @@
 #/Nextcloud
 #_build
 /Sync
+/Windows/
 #
 ## Ruby gems
 #.rvm
