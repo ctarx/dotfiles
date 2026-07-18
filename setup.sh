@@ -84,9 +84,9 @@ notice "stow --delete $OTHER_PROFILE"
 stow --delete "$OTHER_PROFILE"
 
 if $ALREADY_STOWED; then
-  info "Restowing common + $PROFILE"
-  notice "stow --restow common $PROFILE"
-  stow --restow common "$PROFILE"
+  info "Stowing common + $PROFILE"
+  notice "stow common $PROFILE"
+  stow common "$PROFILE"
 else
   info "Adopting existing Omarchy configuration"
   notice "stow --adopt common $PROFILE"
@@ -96,9 +96,21 @@ else
   notice "git restore --source=HEAD --worktree -- common $PROFILE"
   git restore --source=HEAD --worktree -- common "$PROFILE"
 
-  info "Restowing common + $PROFILE"
-  notice "stow --restow common $PROFILE"
-  stow --restow common "$PROFILE"
+  info "Stowing common + $PROFILE"
+  notice "stow common $PROFILE"
+  stow common "$PROFILE"
+fi
+
+if command -v hyprctl >/dev/null 2>&1 && [[ -n "${HYPRLAND_INSTANCE_SIGNATURE:-}" ]]; then
+  info "Reloading Hyprland"
+  notice "hyprctl reload"
+  hyprctl reload
+
+  CONFIG_ERRORS=$(hyprctl configerrors)
+  if [[ -n "$CONFIG_ERRORS" ]]; then
+    printf '%s\n' "$CONFIG_ERRORS" >&2
+    error "Hyprland reported configuration errors"
+  fi
 fi
 
 success "The $PROFILE profile is ready"

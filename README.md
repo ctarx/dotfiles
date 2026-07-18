@@ -43,7 +43,7 @@ On the first run, the script adopts files created by Omarchy and then restores
 the versions tracked in this repository. The dotfiles therefore replace the
 existing Omarchy configuration.
 
-On later runs, the script restows `common` and the selected machine profile.
+On later runs, the script stows `common` and the selected machine profile.
 Only one machine profile is linked at a time.
 
 The repository must be clean before the first installation because
@@ -56,7 +56,7 @@ The equivalent first installation for the desktop is:
 ```bash
 stow --adopt common desktop
 git restore --source=HEAD --worktree -- common desktop
-stow --restow common desktop
+stow common desktop
 ```
 
 For the laptop, replace `desktop` with `laptop`.
@@ -64,7 +64,8 @@ For the laptop, replace `desktop` with `laptop`.
 ## Adding Configuration
 
 To add a program shared by both machines, copy or move its configuration into
-the matching path under `common` and restow the current profile. For example:
+the matching path under `common` and run the setup for the current profile. For
+example:
 
 ```bash
 mv "$HOME/.config/foo" "$HOME/.dotfiles/common/.config/foo"
