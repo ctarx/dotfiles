@@ -85,3 +85,7 @@ git pull
 ```
 
 Use `laptop` on the laptop.
+
+## Contact
+
+Created by [@ctarx](https://web.libera.chat/). Feel free to reach out!
