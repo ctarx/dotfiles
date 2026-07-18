@@ -4,7 +4,7 @@ set -eu
 
 SOURCE="$HOME/"
 EXCLUDE_FILE="$HOME/rsync_ignore"
-BACKUP_MOUNT="/media/$(id -un)/Backup"
+BACKUP_MOUNT="/run/media/$(id -un)/Backup"
 DESTINATION="$BACKUP_MOUNT/samsara/"
 
 fail() {
