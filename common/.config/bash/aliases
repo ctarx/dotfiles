@@ -26,7 +26,7 @@ weather() {
 
 alias clr='elephant activate "clipboard;;remove_all;;"; clear'
 
-chsheet() {
+cheatsh() {
   # Cheatsheets https://github.com/chubin/cheat.sh
   curl -L "https://cheat.sh/${1:-}"
 }
