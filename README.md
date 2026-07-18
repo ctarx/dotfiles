@@ -1,49 +1,110 @@
 # Omarchy dotfiles
 
-Base configuration files for my Omarchy/Hyprland setup.
+Dotfiles for two Omarchy machines:
+
+- `common` contains configuration shared by both machines.
+- `desktop` contains the desktop Hyprland configuration, Waybar, and backup scripts.
+- `laptop` contains the laptop Hyprland Lua configuration for Omarchy Quattro.
 
 ## Screenshot
 
 ![screenshot](screenshot.png)
 
-## Prerequisites
+## Requirements
 
-- Omarchy installed (Hyprland session)
+- Omarchy
 - Git
 - [GNU Stow](https://www.gnu.org/software/stow/)
-- [yay](https://github.com/Jguer/yay) (or adjust the script to your helper)
 
-## Quick Start
+Install any applications referenced by the dotfiles before running the setup.
 
-```bash
-cd "$HOME"
-git clone https://github.com/ctarx/my-dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-./bin/setup.sh
-```
+## Installation
 
-`bin/setup.sh` is idempotent and performs everything the old manual steps covered:
-
-1. Restows the `hypr` and `bashrc` directories.
-2. Copies `backgrounds/2-gruvbox.jpg` into `~/.config/omarchy/themes/gruvbox/backgrounds/`.
-3. Ensures `brave-bin`, `yt-dlp`, and `gvfs-dnssd` are installed via `yay` (without a partial upgrade).
-
-> ℹ️ Starship ships with Omarchy by default (see `omarchy-base.packages`), so no explicit install step is needed here.
-
-## Manual install (optional)
-
-If you prefer to do things step by step:
+Clone the repository into your home directory:
 
 ```bash
-cd "$HOME"
-git clone https://github.com/ctarx/my-dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-stow hypr bashrc
-install -Dm644 backgrounds/2-gruvbox.jpg \
-  ~/.config/omarchy/themes/gruvbox/backgrounds/2-gruvbox.jpg
-yay -S --needed brave-bin yt-dlp gvfs-dnssd
+git clone https://github.com/ctarx/dotfiles.git "$HOME/.dotfiles"
+cd "$HOME/.dotfiles"
 ```
 
-## Contact
+Install the desktop configuration:
 
-Created by [@ctarx](https://web.libera.chat/) – feel free to reach out!
+```bash
+./setup.sh desktop
+```
+
+Install the laptop configuration:
+
+```bash
+./setup.sh laptop
+```
+
+On the first run, the script adopts files created by Omarchy and then restores
+the versions tracked in this repository. The dotfiles therefore replace the
+existing Omarchy configuration.
+
+On later runs, the script restows `common` and the selected machine profile.
+Only one machine profile is linked at a time.
+
+The repository must be clean before the first installation because
+`git restore` is used to make the tracked dotfiles win over adopted files.
+
+## Manual Stow
+
+The equivalent first installation for the desktop is:
+
+```bash
+stow --adopt common desktop
+git restore --source=HEAD --worktree -- common desktop
+stow --restow common desktop
+```
+
+For the laptop, replace `desktop` with `laptop`.
+
+## Adding Configuration
+
+To add a program shared by both machines, copy or move its configuration into
+the matching path under `common` and restow the current profile. For example:
+
+```bash
+mv "$HOME/.config/foo" "$HOME/.dotfiles/common/.config/foo"
+./setup.sh desktop
+git add common/.config/foo
+```
+
+Use `desktop` or `laptop` instead of `common` when a configuration is specific
+to one machine.
+
+## Bash
+
+Shared Bash helpers are stored in:
+
+```text
+~/.config/bash/aliases
+~/.config/bash/profile
+~/.config/bash/shortcuts
+```
+
+They are loaded by the shared `.bashrc` and `.bash_profile`.
+
+## Omarchy Shell
+
+The user configuration for Omarchy Shell is tracked at:
+
+```text
+~/.config/omarchy/shell.json
+```
+
+Omarchy's QML source remains managed by Omarchy under `$OMARCHY_PATH/shell` and
+is not copied into this repository.
+
+## Updating
+
+Pull the repository and run the setup for the machine:
+
+```bash
+git pull
+./setup.sh desktop
+```
+
+Use `laptop` on the laptop.

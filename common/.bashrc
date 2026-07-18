@@ -15,5 +15,5 @@ source ~/.local/share/omarchy/default/bash/rc
 # PS1="\W \[\e]0;\w\a\]$PS1"
 
 # Load aliases and shortcuts (every interactive shell)
-[[ -f ~/.config/shell/aliases ]] && . ~/.config/shell/aliases
-[[ -f ~/.config/shell/shortcuts ]] && . ~/.config/shell/shortcuts
+[[ -f ~/.config/bash/aliases ]] && . ~/.config/bash/aliases
+[[ -f ~/.config/bash/shortcuts ]] && . ~/.config/bash/shortcuts

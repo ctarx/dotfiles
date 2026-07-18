@@ -3,7 +3,7 @@
 #
 
 # Load environment (only once, in login shells)
-[[ -f ~/.config/shell/profile ]] && . ~/.config/shell/profile
+[[ -f ~/.config/bash/profile ]] && . ~/.config/bash/profile
 
 # Load interactive shell configuration
 [[ -f ~/.bashrc ]] && . ~/.bashrc

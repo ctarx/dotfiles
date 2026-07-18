@@ -27,12 +27,12 @@ alias \
 
 # Config editing
 alias \
-  cfa='ce ${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliases' \
+  cfa='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases' \
   cfb='ce $HOME/.bashrc' \
   cfh='ce ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf' \
   cfn='ce ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config' \
-  cfp='ce ${XDG_CONFIG_HOME:-$HOME/.config}/shell/profile' \
-  cfs='ce ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcuts' \
+  cfp='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/profile' \
+  cfs='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/shortcuts' \
   cft='ce ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf' \
 
 # Special
