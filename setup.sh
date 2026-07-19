@@ -41,11 +41,13 @@ case "$PROFILE" in
     OTHER_PROFILE="laptop"
     PROFILE_CONFIG="$HOME/.config/hypr/hyprland.conf"
     PROFILE_SOURCE="$REPO_DIR/desktop/.config/hypr/hyprland.conf"
+    PROFILE_BASHRC_SOURCE="$REPO_DIR/desktop/.bashrc"
     ;;
   laptop)
     OTHER_PROFILE="desktop"
     PROFILE_CONFIG="$HOME/.config/hypr/hyprland.lua"
     PROFILE_SOURCE="$REPO_DIR/laptop/.config/hypr/hyprland.lua"
+    PROFILE_BASHRC_SOURCE="$REPO_DIR/laptop/.bashrc"
     ;;
   *)
     error "Usage: ./setup.sh <desktop|laptop>"
@@ -63,7 +65,7 @@ link_points_to() {
 }
 
 ALREADY_STOWED=false
-if link_points_to "$HOME/.bashrc" "$REPO_DIR/common/.bashrc" &&
+if link_points_to "$HOME/.bashrc" "$PROFILE_BASHRC_SOURCE" &&
   link_points_to "$PROFILE_CONFIG" "$PROFILE_SOURCE"; then
   ALREADY_STOWED=true
 fi
