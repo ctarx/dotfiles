@@ -12,9 +12,9 @@ Dotfiles for two Omarchy machines:
 
 ## Requirements
 
-- <img src="assets/omarchy.png" width="20" height="20" alt=""> [Omarchy](https://omarchy.org/)
-- <img src="assets/git.svg" width="20" height="20" alt=""> [Git](https://git-scm.com/)
-- <img src="assets/gnu.svg" width="20" height="20" alt=""> [GNU Stow](https://www.gnu.org/software/stow/)
+- <img src="assets/omarchy.png" width="18" height="18" alt=""> [Omarchy](https://omarchy.org/)
+- <img src="assets/git.svg" width="18" height="18" alt=""> [Git](https://git-scm.com/)
+- <img src="assets/gnu.svg" width="18" height="18" alt=""> [GNU Stow](https://www.gnu.org/software/stow/)
 
 Install any applications referenced by the dotfiles before running the setup.
 
