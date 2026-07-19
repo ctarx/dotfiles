@@ -1,0 +1,7 @@
+[Unit]
+Description=Back up the home directory
+
+[Service]
+Type=oneshot
+Environment=RSYNC_NOTIFY=1
+ExecStart=%h/.local/bin/rsync.home.sh

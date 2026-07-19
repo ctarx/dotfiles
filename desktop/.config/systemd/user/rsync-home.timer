@@ -1,0 +1,10 @@
+[Unit]
+Description=Back up the home directory daily
+
+[Timer]
+OnCalendar=*-*-* 22:00:00
+Persistent=true
+Unit=rsync-home.service
+
+[Install]
+WantedBy=timers.target
