@@ -1,5 +1,13 @@
 -- Personal application window rules.
 
+-- Give the About TUI enough room for fastfetch when the terminal font is larger.
+o.window({ class = "^org\\.omarchy\\.bash$" }, {
+  tag = "+about-tui",
+})
+o.window({ tag = "about-tui" }, {
+  size = { "monitor_w*0.70", "monitor_h*0.80" },
+})
+
 -- Float and center utility applications at their natural size.
 o.window("^(net\\.davidotek\\.pupgui2|Exodus|Popsicle|WowUpCf|CurseForge)$", {
   float = true,
