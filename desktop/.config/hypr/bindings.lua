@@ -31,6 +31,26 @@ o.bind("CTRL + SUPER + F9", "Volume down", "omarchy-audio-output-volume lower")
 o.bind("CTRL + SUPER + F10", "Volume up", "omarchy-audio-output-volume raise")
 o.bind("CTRL + SUPER + PAUSE", "Mute", "omarchy-audio-output-volume mute-toggle")
 
+hl.unbind("SUPER + SHIFT + C")
+o.bind("SUPER + SHIFT + C", "Calendar", "omarchy-launch-webapp https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now")
+
+hl.unbind("SUPER + SHIFT + M")
+o.bind("SUPER + SHIFT + M", "FreeTube", "freetube")
+
+hl.unbind("SUPER + SHIFT + SLASH")
+o.bind("SUPER + SHIFT + SLASH", "Proton Pass", { webapp = "https://pass.proton.me/" })
+
+hl.unbind("SUPER + SHIFT + E")
+o.bind("SUPER + SHIFT + E", "Proton Mail", { webapp = "https://mail.proton.me/" })
+
+hl.unbind("SUPER + SHIFT + P")
+o.bind("SUPER + SHIFT + P", "Photos", { webapp = "https://cloud.ctsrv.org/apps/photos/" })
+
+hl.unbind("SUPER + SHIFT + CTRL + G")
+hl.unbind("SUPER + SHIFT + X")
+hl.unbind("SUPER + SHIFT + ALT + X")
+hl.unbind("SUPER + SHIFT + ALT + E")
+
 -- Logitech MX Keys examples:
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
