@@ -16,7 +16,7 @@ syn match razorVariable /\<\%(backpack\|self\|lasttarget\|lastobject\|lefthand\|
 
 syn keyword razorBlock if elseif else endif while endwhile foreach endfor loop replay break continue stop
 syn keyword razorKeyword as in and or not
-syn keyword razorCommand attack cast classicuo cuo cleardragdrop clearhands cooldown dclick dclicktype dress drop droprelloc getlabel hotkey interrupt lift lifttype music potion random rename script setability setvar setvariable skill sound unsetvar unsetvariable virtue walk wait pause undress
+syn keyword razorCommand attack cast classicuo cuo cleardragdrop clearhands cooldown dclick dclicktype dress drop droprelloc getlabel hotkey interrupt lift lifttype music potion random rename script setability setvar setvariable skill useskill sound unsetvar unsetvariable virtue walk wait pause wft waitfortarget undress
 syn keyword razorCommand organizer restock scavenger sell useonce
 syn keyword razorCommand gumpresponse gumpclose menu menuresponse promptresponse waitforgump waitformenu waitforprompt
 syn keyword razorCommand clearall lasttarget setlasttarget target targetrelloc targetloc targettype waitfortarget
