@@ -42,19 +42,13 @@ o.window("^(brave-discord\\.com__channels_@me-Default)$", { workspace = "5" })
 o.window("^(signal)$", { workspace = "5" })
 o.window("^(brave-web\\.whatsapp\\.com__-Default)$", { workspace = "5" })
 
--- Outlands + Razor Outlands Edition (Outlands.exe -> class steam_app_2336620594).
--- Equivalent of the desktop hyprland.conf rules, scaled to the laptop monitor
--- (X230 1366x768). Sizes are proportional so they fit any screen.
-o.window({ class = "^steam_app_2336620594$" }, { tag = "+game" })
-o.window({ class = "^steam_app_2336620594$", initial_title = "(Razor Outlands Edition)" }, { tag = "+razor" })
-
+-- Outlands launcher/helper windows should not inherit the fullscreen game rule.
+o.window({ class = "^steam_app_3553891653$" }, { tag = "+game" })
+o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, { tag = "-game" })
 o.window({ tag = "game" }, { opacity = "1 1", workspace = "4" })
-
--- Razor window: floating, centered, windowed (no fullscreen), just slightly
--- bigger than the Outlands launcher window (600x450).
-o.window({ tag = "razor" }, {
+o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, {
   float = true,
   center = true,
   fullscreen = false,
-  size = { 700, 525 },
+  size = { "monitor_w*0.35", "monitor_h*0.35" },
 })

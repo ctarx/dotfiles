@@ -4,9 +4,9 @@
 o.window({ class = "^(steam_app.*|gamescope)$" }, { tag = "+game" })
 o.window({ title = "^World of Warcraft$" }, { tag = "+game" })
 -- Outlands launcher/helper windows should not inherit the fullscreen game rule.
-o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition)$" }, { tag = "-game" })
+o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, { tag = "-game" })
 o.window({ tag = "game" }, { opacity = "1 1", fullscreen = true, workspace = "4" })
-o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition)$" }, {
+o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, {
 	float = true,
 	center = true,
 	fullscreen = false,

@@ -30,3 +30,10 @@ o.window("^(FreeTube|signal)$", {
   tag = "-default-opacity",
   opacity = "1 1",
 })
+
+-- Keep chat applications on workspace 5 and fully opaque.
+o.window({ class = "^(signal|brave-discord\\.com__channels_@me-Default|brave-web\\.whatsapp\\.com__-Default)$" }, {
+  tag = "+chat",
+  workspace = "5",
+  opacity = "1 1",
+})
