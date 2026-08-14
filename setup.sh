@@ -39,8 +39,8 @@ error() {
 case "$PROFILE" in
   desktop)
     OTHER_PROFILE="laptop"
-    PROFILE_CONFIG="$HOME/.config/hypr/hyprland.conf"
-    PROFILE_SOURCE="$REPO_DIR/desktop/.config/hypr/hyprland.conf"
+    PROFILE_CONFIG="$HOME/.config/hypr/hyprland.lua"
+    PROFILE_SOURCE="$REPO_DIR/desktop/.config/hypr/hyprland.lua"
     PROFILE_BASHRC_SOURCE="$REPO_DIR/desktop/.bashrc"
     ;;
   laptop)

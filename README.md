@@ -3,8 +3,8 @@
 Dotfiles for two Omarchy machines:
 
 - `common` contains configuration shared by both machines.
-- `desktop` contains the desktop Hyprland configuration, Waybar, and backup scripts.
-- `laptop` contains the laptop Hyprland Lua configuration for Omarchy Quattro.
+- `desktop` contains the desktop Hyprland Lua configuration and backup scripts.
+- `laptop` contains the laptop Hyprland Lua configuration.
 
 ## Screenshot
 
