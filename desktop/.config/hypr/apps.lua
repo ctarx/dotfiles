@@ -38,6 +38,15 @@ o.window("^(net\\.davidotek\\.pupgui2|Exodus|Popsicle|CurseForge|WowUpCf)$", {
 o.window("^(WowUpCf|CurseForge)$", {
 	size = { "monitor_w*0.75", "monitor_h*0.7" },
 })
+
+-- Keep the Nextcloud client consistently sized and centered.
+o.window({ class = "^Nextcloud$" }, {
+	float = true,
+	center = true,
+	fullscreen = false,
+	size = { "monitor_w*0.7", "monitor_h*0.8" },
+})
+
 o.window({ class = "^Mudlet$", title = "^Arkadia - Editor$" }, {
 	float = true,
 	size = { "monitor_w*0.5", "monitor_h*0.7" },
