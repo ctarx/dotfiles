@@ -4,9 +4,9 @@
     "layout": {
       "center": [
         {
+          "id": "omarchy.clock",
           "format": "dddd HH:mm",
           "formatAlt": "d MMMM 'W'ww yyyy",
-          "id": "omarchy.clock",
           "verticalFormat": "HH\n—\nmm"
         },
         {
