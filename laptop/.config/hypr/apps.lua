@@ -1,5 +1,24 @@
 -- Personal application window rules.
 
+-- Application routing.
+o.window({ class = "^steam$", title = "^Steam$" }, { workspace = "4" })
+o.window({ class = "^(signal|brave-discord\\.com__channels_@me-Default|brave-web\\.whatsapp\\.com__-Default)$" }, {
+  tag = "+chat",
+  workspace = "5",
+  opacity = "1 1",
+})
+
+-- Outlands launcher/helper windows should not inherit the fullscreen game rule.
+o.window({ class = "^steam_app_3553891653$" }, { tag = "+game" })
+o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, { tag = "-game" })
+o.window({ tag = "game" }, { opacity = "1 1", workspace = "4" })
+o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, {
+  float = true,
+  center = true,
+  fullscreen = false,
+  size = { "monitor_w*0.35", "monitor_h*0.35" },
+})
+
 -- Give the About TUI enough room for fastfetch when the terminal font is larger.
 o.window({ class = "^org\\.omarchy\\.bash$" }, {
   tag = "+about-tui",
@@ -25,15 +44,8 @@ o.window("^(WowUpCf|CurseForge)$", {
   size = { "monitor_w*0.75", "monitor_h*0.7" },
 })
 
--- Keep media and chat windows fully opaque.
-o.window("^(FreeTube|signal)$", {
+-- Keep FreeTube fully opaque.
+o.window("^FreeTube$", {
   tag = "-default-opacity",
-  opacity = "1 1",
-})
-
--- Keep chat applications on workspace 5 and fully opaque.
-o.window({ class = "^(signal|brave-discord\\.com__channels_@me-Default|brave-web\\.whatsapp\\.com__-Default)$" }, {
-  tag = "+chat",
-  workspace = "5",
   opacity = "1 1",
 })

@@ -35,9 +35,3 @@ hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "4", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "5", monitor = "DP-2" })
-
--- Application routing.
-o.window({ class = "^steam$", title = "^Steam$" }, { workspace = "4" })
-o.window("^(brave-discord\\.com__channels_@me-Default)$", { workspace = "5" })
-o.window("^(signal)$", { workspace = "5" })
-o.window("^(brave-web\\.whatsapp\\.com__-Default)$", { workspace = "5" })
