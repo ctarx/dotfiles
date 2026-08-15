@@ -24,7 +24,33 @@ weather() {
   curl -s "wttr.in/$1"
 }
 
-alias clr='elephant activate "clipboard;;remove_all;;"; clear'
+clr() {
+  local state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/omarchy"
+  local history_file="$state_dir/clipboard-history.json"
+  local image_dir="$state_dir/clipboard-images"
+  local tmp_file
+
+  # Clear the current Wayland clipboard before removing its history.
+  wl-copy --clear 2>/dev/null || true
+
+  # Replace the history atomically so Quickshell never reads a partial file.
+  if [[ -f "$history_file" ]]; then
+    tmp_file=$(command mktemp "${history_file}.tmp.XXXXXX") || return 1
+
+    if ! printf '[]\n' >"$tmp_file" ||
+      ! command mv -f -- "$tmp_file" "$history_file"; then
+      command rm -f -- "$tmp_file"
+      return 1
+    fi
+  fi
+
+  # Remove images saved by Omarchy's clipboard history.
+  if [[ -d "$image_dir" ]]; then
+    command rm -f -- "$image_dir"/*
+  fi
+
+  command clear
+}
 
 cheatsh() {
   # Cheatsheets https://github.com/chubin/cheat.sh
