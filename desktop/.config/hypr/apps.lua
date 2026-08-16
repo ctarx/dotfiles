@@ -17,11 +17,16 @@ o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Ra
 })
 o.window({ class = "^steam$", title = "^Steam$" }, { workspace = "4" })
 
--- Game launchers.
-o.window({ title = "^Battle\\.net.*$" }, {
-	tag = "+game-launcher",
-	fullscreen = false,
-	float = true,
+-- Battle.net launched through Steam is a game-class window, but the launcher
+-- should not inherit the fullscreen game rule.
+o.window({ class = "^steam_app_2586847247$" }, {
+  tag = "-game",
+  fullscreen = false,
+})
+o.window({ class = "^steam_app_2586847247$", title = "^Battle\\.net.*$" }, {
+  tag = "+game-launcher",
+  fullscreen = false,
+  float = true,
 	center = true,
 	size = { "monitor_w*0.6", "monitor_h*0.6" },
 })
