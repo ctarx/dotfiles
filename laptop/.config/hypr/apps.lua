@@ -10,7 +10,15 @@ o.window({ class = "^(signal|brave-discord\\.com__channels_@me-Default|brave-web
 
 -- Outlands launcher/helper windows should not inherit the fullscreen game rule.
 o.window({ class = "^steam_app_3553891653$" }, { tag = "+game" })
-o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, { tag = "-game" })
+o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, {
+  tag = "-game",
+  workspace = "4",
+})
+-- Razor's native popup menus have no title; keep them out of game rules.
+o.window({ class = "^steam_app_3553891653$", initial_title = "^$" }, {
+  tag = "-game",
+  workspace = "4",
+})
 o.window({ tag = "game" }, { opacity = "1 1", workspace = "4" })
 o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, {
   float = true,
