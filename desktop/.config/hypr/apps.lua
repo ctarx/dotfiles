@@ -8,6 +8,11 @@ o.window(
 	{ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" },
 	{ tag = "-game", workspace = "4" }
 )
+-- Razor's native popup menus have no title; keep them out of fullscreen rules.
+o.window({ class = "^steam_app_3553891653$", initial_title = "^$" }, {
+	tag = "-game",
+	workspace = "4",
+})
 o.window({ tag = "game" }, { opacity = "1 1", fullscreen = true, workspace = "4" })
 o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Razor Outlands Edition|ClassicUO.*)$" }, {
 	float = true,
