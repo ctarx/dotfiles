@@ -32,10 +32,10 @@ o.bind("CTRL + SUPER + F10", "Volume up", "omarchy-audio-output-volume raise")
 o.bind("CTRL + SUPER + PAUSE", "Mute", "omarchy-audio-output-volume mute-toggle")
 
 hl.unbind("SUPER + SHIFT + C")
-o.bind("SUPER + SHIFT + C", "Calendar", "omarchy-launch-webapp https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now")
+o.bind("SUPER + SHIFT + C", "Calendar", { webapp = "https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now" })
 
 hl.unbind("SUPER + SHIFT + M")
-o.bind("SUPER + SHIFT + M", "FreeTube", "freetube")
+o.bind("SUPER + SHIFT + M", "FreeTube", { launch = "freetube" })
 
 hl.unbind("SUPER + SHIFT + SLASH")
 o.bind("SUPER + SHIFT + SLASH", "Proton Pass", { webapp = "https://pass.proton.me/" })
