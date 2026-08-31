@@ -25,7 +25,7 @@ repeat_delay = 300,
 --     -- Turn off mouse acceleration (default: adaptive).
 --     accel_profile = "flat",
 --
---     touchpad = {
+touchpad = {
 --       -- Use natural (inverse) scrolling.
 --       natural_scroll = true,
 --
@@ -40,7 +40,7 @@ scroll_factor = 0.4,
 --
 --       -- Left-click-and-drag with three fingers.
 --       drag_3fg = 1,
---     },
+},
   },
 })
 
