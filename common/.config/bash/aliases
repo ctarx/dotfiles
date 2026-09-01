@@ -20,6 +20,7 @@ alias top="htop"
 alias lsmount='mount | column -t'
 
 alias ipinfo='curl ipinfo.io'
+alias ldsrv='DOCKER_HOST=ssh://srv lazydocker'
 weather() {
   curl -s "wttr.in/$1"
 }
