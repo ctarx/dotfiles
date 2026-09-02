@@ -26,7 +26,7 @@ o.bind("SUPER + SHIFT + C", "Calendar", { webapp = "https://cloud.ctsrv.org/apps
 
 -- FreeTube instead of the default Music binding.
 hl.unbind("SUPER + SHIFT + M")
-o.bind("SUPER + SHIFT + M", "FreeTube", { launch = "freetube --new-window" })
+o.bind("SUPER + SHIFT + M", "FreeTube", { launch = "freetube" })
 
 -- Proton Mail instead of the default HEY binding.
 hl.unbind("SUPER + SHIFT + E")
