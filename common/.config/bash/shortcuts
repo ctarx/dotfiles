@@ -19,7 +19,7 @@ ce() {
     printf 'Error: EDITOR is not set\n' >&2
     return 1
   fi
-  "$EDITOR" "$1"
+  $EDITOR "$1"
 }
 
 # Navigation
