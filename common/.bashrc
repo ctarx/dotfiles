@@ -22,3 +22,4 @@ fi
 # Load aliases and shortcuts (every interactive shell)
 [[ -f ~/.config/bash/aliases ]] && . ~/.config/bash/aliases
 [[ -f ~/.config/bash/shortcuts ]] && . ~/.config/bash/shortcuts
+[[ -f ~/.config/bash/banner ]] && . ~/.config/bash/banner

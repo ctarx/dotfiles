@@ -1,0 +1,41 @@
+# System info banner, shown once per interactive session.
+#
+# Wrapped in a function so all the detection temporaries stay local
+# instead of leaking into the shell.
+_prompt_header() {
+  local _os _os_id _os_icon _kernel _kernel_short _shell_name _shell_ver
+
+  # Gruvbox truecolor, matching the roles used in starship.toml:
+  # yellow=username, blue=hostname/directory, green=kernel, purple=git_branch
+  local GRAY="\e[38;2;146;131;116m" YELLOW="\e[1;38;2;250;189;47m"
+  local GREEN="\e[1;38;2;184;187;38m" BLUE="\e[1;38;2;131;165;152m"
+  local PURPLE="\e[1;38;2;211;134;155m" ENDC="\e[0m"
+
+  _os=$(grep "^NAME" /etc/os-release 2>/dev/null | cut -d'"' -f2)
+  _os_id=$(grep "^ID=" /etc/os-release 2>/dev/null | cut -d'=' -f2)
+  case "${_os_id}" in
+    debian) _os_icon=$'' ;; # Debian swirl
+    ubuntu) _os_icon=$'' ;; # Ubuntu circle
+    arch | omarchy) _os_icon=$'' ;; # Arch logo
+    fedora) _os_icon=$'' ;; # Fedora
+    *)      _os_icon=$'⚙' ;; # Gear fallback
+  esac
+
+  _kernel=$(uname -r)
+  _kernel_short=$(echo "${_kernel}" | awk -F'[.-]' '{print ($1 && $2 && $3) ? $1"."$2"."$3 : ($1 && $2) ? $1"."$2 : $1}')
+
+  _shell_name="${SHELL##*/}"
+  _shell_name="${_shell_name:-bash}"
+  _shell_ver="${BASH_VERSION-}"
+  _shell_ver="${_shell_ver%%(*}"
+  _shell_ver="${_shell_ver:-unknown}"
+
+  printf "  ${GRAY}─ ${YELLOW}%s ${_os:-Linux}${ENDC} ${GRAY}·${ENDC} ${GREEN}${_kernel_short}${ENDC} ${GRAY}·${ENDC} ${BLUE}${XDG_CURRENT_DESKTOP:-unknown}${ENDC} ${GRAY}·${ENDC} ${PURPLE}${_shell_name} ${_shell_ver}${ENDC} ${GRAY}─${ENDC}\n" "${_os_icon}"
+}
+
+if [ -n "$PS1" ] && [[ -z "$_PROMPT_HEADER_SHOWN" ]]; then
+  _PROMPT_HEADER_SHOWN=1
+  _prompt_header
+fi
+
+# vim: set ft=bash :
