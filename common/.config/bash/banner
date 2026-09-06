@@ -1,4 +1,6 @@
 # System info banner, shown once per interactive session.
+# Based on the prompt from https://butterbian.org/ (Just a Guy Linux,
+# https://www.youtube.com/@justaguylinux), recolored for Gruvbox/Omarchy.
 #
 # Wrapped in a function so all the detection temporaries stay local
 # instead of leaking into the shell.
