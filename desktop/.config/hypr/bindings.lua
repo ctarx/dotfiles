@@ -51,6 +51,10 @@ hl.unbind("SUPER + SHIFT + X")
 hl.unbind("SUPER + SHIFT + ALT + X")
 hl.unbind("SUPER + SHIFT + ALT + E")
 
+-- Desktop keyboard has a classic Menu (context menu) key instead of the
+-- Copilot key laptops use for SUPER + SHIFT + code:201 -> Omarchy menu.
+o.bind("Menu", "Omarchy menu", "omarchy-menu toggle root")
+
 -- Logitech MX Keys examples:
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
