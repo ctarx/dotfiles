@@ -48,6 +48,10 @@ set -e
 
 if [ "$status" -eq 0 ]; then
   notify normal "Home backup OK" "backup completed successfully"
+elif [ "$status" -eq 24 ]; then
+  # Files vanishing mid-transfer is expected when backing up a live $HOME
+  notify normal "Home backup OK" "backup completed; some files vanished during transfer"
+  status=0
 else
   notify critical "Home backup FAILED" "rsync exit status: $status"
 fi
