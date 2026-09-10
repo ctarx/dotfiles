@@ -314,6 +314,7 @@ nohup.out
 /.cargo/registry/
 /.cargo/git/
 /.rustup/
+/Projects/repos/*/target/
 
 # Project-local dependencies and caches
 **/node_modules/
