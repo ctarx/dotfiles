@@ -1,0 +1,111 @@
+diff -ruN -x manifest.json bar/BarModel.js ctarx.bar/BarModel.js
+--- bar/BarModel.js	2026-09-11 04:01:52.000000000 +0100
++++ ctarx.bar/BarModel.js	2026-09-11 18:57:31.189477095 +0100
+@@ -208,12 +208,48 @@
+   return best
+ }
+ 
++// Match one `bar.outputs` pattern against a Quickshell screen: a connector
++// name ("DP-1"), or "desc:<text>" found in the screen's model + serial number.
++function screenMatches(screen, pattern) {
++  var p = String(pattern || "").trim()
++  if (!p || !screen) return false
++  if (p.indexOf("desc:") === 0) {
++    var desc = [screen.model, screen.serialNumber].filter(function(v) { return !!v }).join(" ")
++    return desc.indexOf(p.slice(5).trim()) !== -1
++  }
++  return String(screen.name || "") === p
++}
++
++// Screens that get a bar. No outputs means every screen; "!pattern" excludes
++// one. When the list matches nothing connected, fall back to the first screen
++// so the menu and tray never vanish (e.g. undocked from the listed monitor).
++function barScreens(screens, outputs) {
++  var all = []
++  var count = screens ? Number(screens.length) || 0 : 0
++  for (var i = 0; i < count; i++) if (screens[i]) all.push(screens[i])
++
++  var patterns = Array.isArray(outputs)
++    ? outputs.map(function(p) { return String(p || "").trim() }).filter(function(p) { return p !== "" })
++    : []
++  if (patterns.length === 0) return all
++
++  var include = patterns.filter(function(p) { return p[0] !== "!" })
++  var exclude = patterns.filter(function(p) { return p[0] === "!" }).map(function(p) { return p.slice(1) })
++  var picked = all.filter(function(screen) {
++    var included = include.length === 0 || include.some(function(p) { return screenMatches(screen, p) })
++    return included && !exclude.some(function(p) { return screenMatches(screen, p) })
++  })
++  return picked.length > 0 ? picked : all.slice(0, 1)
++}
++
+ if (typeof module !== "undefined") {
+   module.exports = {
+     isDrawnSlot: isDrawnSlot,
+     pickDrawnSlot: pickDrawnSlot,
+     pickPanelSlot: pickPanelSlot,
+     nearestDropTarget: nearestDropTarget,
++    screenMatches: screenMatches,
++    barScreens: barScreens,
+     normalizePosition: normalizePosition,
+     entrySettings: entrySettings,
+     entryId: entryId,
+diff -ruN -x manifest.json bar/Bar.qml ctarx.bar/Bar.qml
+--- bar/Bar.qml	2026-09-11 04:01:52.000000000 +0100
++++ ctarx.bar/Bar.qml	2026-09-11 18:58:06.855456898 +0100
+@@ -46,6 +46,7 @@
+     position: "top",
+     transparent: false,
+     centerAnchor: "omarchy.clock",
++    outputs: [],
+     layout: { left: [], center: [], right: [] }
+   })
+   property var layoutConfig: fallbackBarConfig.layout
+@@ -584,6 +585,7 @@
+     position = normalizePosition(config.position)
+     setRequestedTransparency(config.transparent === true)
+     centerAnchor = Util.canonicalWidgetId(config.centerAnchor || "")
++    outputs = Array.isArray(config.outputs) ? config.outputs : []
+ 
+     // layoutEntries feeds plain JS arrays to the module Repeaters, and QML
+     // cannot diff those: reassigning layoutConfig rebuilds every widget on
+@@ -1193,8 +1195,20 @@
+     }
+   }
+ 
++  // `bar.outputs` in shell.json picks the monitors that get a bar; see
++  // BarModel.barScreens. The built-in bar ignores the key.
++  property var outputs: []
++  readonly property var barScreens: BarModel.barScreens(Quickshell.screens, outputs)
++
++  function hasBarOn(screen) {
++    var name = String(screen && screen.name || "")
++    for (var i = 0; i < barScreens.length; i++)
++      if (barScreens[i] === screen || (name && String(barScreens[i].name || "") === name)) return true
++    return false
++  }
++
+   Variants {
+-    model: Quickshell.screens
++    model: root.barScreens
+ 
+     delegate: Component {
+       BarPanel {
+@@ -1206,7 +1220,7 @@
+   }
+ 
+   Variants {
+-    model: Quickshell.screens
++    model: root.barScreens
+ 
+     delegate: Component {
+       DragGhostPanel {
+@@ -1219,7 +1233,7 @@
+   }
+ 
+   Variants {
+-    model: Quickshell.screens
++    model: root.barScreens
+ 
+     delegate: Component {
+       BarMoveGhostPanel {
