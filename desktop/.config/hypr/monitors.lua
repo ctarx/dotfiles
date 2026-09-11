@@ -4,7 +4,7 @@
 -- Monitor scale is Hyprland's scale for the output. It sizes everything
 -- Wayland-native, accepts fractions (1.6, 1.75), and applies immediately.
 -- "auto" lets Hyprland pick per display.
-local omarchy_monitor_scale = "auto"
+local omarchy_monitor_scale = 1
 -- hl.monitor({ output = "", mode = "preferred", position = "auto", scale = omarchy_monitor_scale })
 
 -- Configure a specific monitor.
