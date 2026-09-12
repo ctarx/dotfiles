@@ -8,13 +8,13 @@ o.window({ class = "^(signal|brave-discord\\.com__channels_@me-Default|brave-web
 })
 
 -- Float and center utility applications at their natural size.
-o.window("^(Exodus|Popsicle|CurseForge)$", {
+o.window("^(Exodus|[Cc]urse[Ff]orge)$", {
   float = true,
   center = true,
 })
 
 -- Resize CurseForge window.
-o.window("^CurseForge$", {
+o.window("^[Cc]urse[Ff]orge$", {
   size = { "monitor_w*0.75", "monitor_h*0.7" },
 })
 
