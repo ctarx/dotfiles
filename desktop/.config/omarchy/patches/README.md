@@ -6,8 +6,8 @@ The stock Omarchy bar always creates one bar per connected monitor. This clone r
 
 ## Current setup
 
-- Active bar: `ctarx.bar` (clone), set by `bar.id` in `~/.config/omarchy/shell.json`
-- `bar.outputs`: `["DP-1"]`, so the bar shows only on DP-1 (Dell S2725DC) and DP-2 (Dell U2419HC) has no bar and no reserved space
+- Not in use: `shell.json` is back on the stock `omarchy.bar` (no `bar.id`, no `bar.outputs`), so both DP-1 and DP-2 have a bar. The clone stays on disk; re-enable it with `omarchy bar use ctarx.bar` and `"outputs": ["DP-1"]`
+- Previously: `bar.outputs` was `["DP-1"]`, so the bar showed only on DP-1 (Dell S2725DC) and DP-2 (Dell U2419HC) had no bar and no reserved space
 - Based on: `omarchy-dev 4.0.0.r2100.gb5589fa` (upstream commit `b5589faa`), Quickshell 0.3.1
 
 ## Files

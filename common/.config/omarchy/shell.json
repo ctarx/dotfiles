@@ -55,11 +55,7 @@
       ]
     },
     "position": "top",
-    "transparent": false,
-    "id": "ctarx.bar",
-    "outputs": [
-      "DP-1"
-    ]
+    "transparent": false
   },
   "idle": {
     "lock": 300,
