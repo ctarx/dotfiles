@@ -27,9 +27,12 @@
 hl.unbind("SUPER + W")
 o.bind("SUPER + Q", "Close active window", hl.dsp.window.close())
 
-o.bind("CTRL + SUPER + F9", "Volume down", "omarchy-audio-output-volume lower")
-o.bind("CTRL + SUPER + F10", "Volume up", "omarchy-audio-output-volume raise")
-o.bind("CTRL + SUPER + PAUSE", "Mute", "omarchy-audio-output-volume mute-toggle")
+-- Volume keys for a keyboard without media keys. F9, F10 and Pause are not
+-- used by any Omarchy default binding.
+o.bind("SUPER + F9", "Volume down", "omarchy-audio-output-volume lower", { locked = true, repeating = true })
+o.bind("SUPER + F10", "Volume up", "omarchy-audio-output-volume raise", { locked = true, repeating = true })
+o.bind("SUPER + PAUSE", "Mute", "omarchy-audio-output-volume mute-toggle", { locked = true })
+o.bind("SUPER + SHIFT + PAUSE", "Switch audio output", "omarchy-audio-output-switch", { locked = true })
 
 hl.unbind("SUPER + SHIFT + C")
 o.bind("SUPER + SHIFT + C", "Calendar", { webapp = "https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now" })
