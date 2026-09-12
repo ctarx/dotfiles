@@ -23,33 +23,30 @@ ce() {
 }
 
 # Navigation
-alias \
-  d='cl ~/Documents' \
-  D='cl ~/Downloads' \
-  m='cl ~/Music' \
-  pp='cl ~/Pictures' \
-  vv='cl ~/Videos' \
-  dev='cl ~/Projects' \
-  odn='cl ~/Work/courses/Odin-Project' \
-  dt='cl ~/.dotfiles' \
-  zt='cl ~/Documents/NotesVault' \
-  cac='cl $HOME/.cache' \
-  cf='cl ${XDG_CONFIG_HOME:-$HOME/.config}' \
-  omr='cl $HOME/.local/share/omarchy' \
+alias dc='cl ~/Documents'
+alias dw='cl ~/Downloads'
+alias mm='cl ~/Music'
+alias pp='cl ~/Pictures'
+alias vv='cl ~/Videos'
+alias dev='cl ~/Projects'
+alias odn='cl ~/Projects/courses/Odin-Project'
+alias dt='cl ~/.dotfiles'
+alias zt='cl ~/Documents/NotesVault'
+alias cac='cl $HOME/.cache'
+alias cf='cl ${XDG_CONFIG_HOME:-$HOME/.config}'
+alias omr='cl /usr/share/omarchy'
 
 # Config editing
-alias \
-  cfa='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases' \
-  cfb='ce $HOME/.bashrc' \
-  cfh='ce ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf' \
-  cfn='ce ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config' \
-  cfp='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/profile' \
-  cfs='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/shortcuts' \
-  cft='ce ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf' \
+alias cfa='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases'
+alias cfb='ce $HOME/.bashrc'
+alias cfh='ce ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf'
+alias cfn='ce ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
+alias cfp='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/profile'
+alias cfs='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/shortcuts'
+alias cft='ce ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf'
 
 # Special
-alias \
-  ark='cl ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia' \
-  arko='ce ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia/ozum.json' \
+alias ark='cl ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia'
+alias arko='ce ${XDG_CONFIG_HOME:-$HOME/.config}/mudlet/profiles/Arkadia/ozum.json'
 
 # vim: set ft=bash :

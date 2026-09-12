@@ -1,10 +1,8 @@
 # Utilities
-alias \
-    cp='cp -iv' \
-    mv='mv -iv' \
-    rm='rm -vI' \
-    mkdir='mkdir -pv' \
-    ..='cd ../'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -vI'
+alias mkdir='mkdir -pv'
 
 alias cpv='rsync -ah --info=progress2' # copy with a progress bar
 alias less='less -R'
