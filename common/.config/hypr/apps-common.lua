@@ -18,6 +18,15 @@ o.window("^[Cc]urse[Ff]orge$", {
   size = { "monitor_w*0.75", "monitor_h*0.7" },
 })
 
+-- Battle.net launched through Steam. Steam gives non-Steam shortcuts a
+-- different steam_app id on each machine, so match any id by the title.
+o.window({ class = "^steam_app_.*$", title = "^Battle\\.net.*$" }, {
+  float = true,
+  center = true,
+  size = { 1280, 800 },
+  workspace = "4",
+})
+
 -- Give the Mudlet editor a larger floating window.
 o.window({ class = "^Mudlet$", title = "^Arkadia - Editor$" }, {
   float = true,
