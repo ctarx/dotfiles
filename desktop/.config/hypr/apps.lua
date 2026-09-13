@@ -22,6 +22,10 @@ o.window({ class = "^steam_app_3553891653$", initial_title = "^(Ultima Online|Ra
 	float = true,
 	center = true,
 	fullscreen = false,
+})
+-- The launcher ("Ultima Online") has a fixed size; forcing one stretches it
+-- and offsets its click targets, so only Razor gets resized.
+o.window({ class = "^steam_app_3553891653$", initial_title = "^Razor Outlands Edition$" }, {
 	size = { "monitor_w*0.35", "monitor_h*0.35" },
 })
 o.window({ class = "^steam$", title = "^Steam$" }, { workspace = "4" })
