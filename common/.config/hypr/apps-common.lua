@@ -8,7 +8,7 @@ o.window({ class = "^(signal|brave-discord\\.com__channels_@me-Default|brave-web
 })
 
 -- Float and center utility applications at their natural size.
-o.window("^(Exodus|[Cc]urse[Ff]orge)$", {
+o.window("^(Exodus|[Cc]urse[Ff]orge|net\\.davidotek\\.pupgui2)$", {
   float = true,
   center = true,
 })
