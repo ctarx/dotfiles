@@ -6,7 +6,7 @@ Dotfiles for two Omarchy machines:
 - `desktop` contains the desktop Hyprland Lua configuration and backup scripts.
 - `laptop` contains the laptop Hyprland Lua configuration.
 
-Each machine profile also contains its own `omarchy/shell.json`: desktop uses the built-in `omarchy.elsewhen` widget from edge, while laptop omits Elsewhen because stable does not include it by default. The laptop profile keeps an explicit Super+Q close-window binding because stable defaults to Super+W.
+Each machine profile also contains its own `omarchy/shell.json`. Both profiles omit the Elsewhen world clock widget. The laptop profile keeps an explicit Super+Q close-window binding because stable defaults to Super+W.
 
 The profiles also provide separate imv configurations: desktop opens images in Omasnap, while laptop uses Tensaku. Tmux configuration is shared in `common`.
 
