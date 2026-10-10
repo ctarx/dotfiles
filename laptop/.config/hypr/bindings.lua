@@ -36,8 +36,9 @@ o.bind("SUPER + SHIFT + E", "Email", { webapp = "https://mail.proton.me/" })
 hl.unbind("SUPER + SHIFT + SLASH")
 o.bind("SUPER + SHIFT + SLASH", "Proton Pass", { webapp = "https://pass.proton.me/" })
 
--- Close the active window with SUPER+Q instead of SUPER+W.
+-- Stable closes windows with SUPER+W; use SUPER+Q instead.
 hl.unbind("SUPER + W")
+hl.unbind("SUPER + Q")
 o.bind("SUPER + Q", "Close active window", hl.dsp.window.close())
 
 -- Photos web app.

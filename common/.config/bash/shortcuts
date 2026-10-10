@@ -39,7 +39,7 @@ alias omr='cl /usr/share/omarchy'
 # Config editing
 alias cfa='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/aliases'
 alias cfb='ce $HOME/.bashrc'
-alias cfh='ce ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf'
+alias cfh='ce ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.lua'
 alias cfn='ce ${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config'
 alias cfp='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/profile'
 alias cfs='ce ${XDG_CONFIG_HOME:-$HOME/.config}/bash/shortcuts'

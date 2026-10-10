@@ -23,10 +23,6 @@
 -- Disable a default binding without replacing it.
 -- hl.unbind("SUPER + SHIFT + B")
 
--- Replace the default close-window binding.
-hl.unbind("SUPER + W")
-o.bind("SUPER + Q", "Close active window", hl.dsp.window.close())
-
 -- Volume keys for a keyboard without media keys. F9, F10 and Pause are not
 -- used by any Omarchy default binding.
 o.bind("SUPER + F9", "Volume down", "omarchy-audio-output-volume lower", { locked = true, repeating = true })

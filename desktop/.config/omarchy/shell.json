@@ -10,6 +10,10 @@
           "id": "omarchy.indicators"
         },
         {
+          "id": "omarchy.elsewhen",
+          "zones": "Dublin|Europe/Dublin, Dubai|Asia/Dubai, Tokyo|Asia/Tokyo, Los Angeles|America/Los_Angeles, New York|America/New_York"
+        },
+        {
           "id": "omarchy.clock",
           "format": "dddd HH:mm",
           "formatAlt": "d MMMM 'W'ww yyyy",
@@ -55,7 +59,7 @@
       ]
     },
     "position": "top",
-    "transparent": false
+    "transparent": true
   },
   "idle": {
     "lock": 300,
