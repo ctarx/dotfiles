@@ -5,7 +5,7 @@
 # Wrapped in a function so all the detection temporaries stay local
 # instead of leaking into the shell.
 _prompt_header() {
-  local _os _os_id _os_icon _kernel _kernel_short _shell_name _shell_ver
+  local _os _os_id _os_icon _kernel _shell_name _shell_ver
 
   # Gruvbox truecolor, matching the roles used in starship.toml:
   # yellow=username, blue=hostname/directory, green=kernel, purple=git_branch
@@ -24,7 +24,6 @@ _prompt_header() {
   esac
 
   _kernel=$(uname -r)
-  _kernel_short=$(echo "${_kernel}" | awk -F'[.-]' '{print ($1 && $2 && $3) ? $1"."$2"."$3 : ($1 && $2) ? $1"."$2 : $1}')
 
   _shell_name="${SHELL##*/}"
   _shell_name="${_shell_name:-bash}"
@@ -32,7 +31,7 @@ _prompt_header() {
   _shell_ver="${_shell_ver%%(*}"
   _shell_ver="${_shell_ver:-unknown}"
 
-  printf "  ${GRAY}─ ${YELLOW}%s ${_os:-Linux}${ENDC} ${GRAY}·${ENDC} ${GREEN}${_kernel_short}${ENDC} ${GRAY}·${ENDC} ${BLUE}${XDG_CURRENT_DESKTOP:-unknown}${ENDC} ${GRAY}·${ENDC} ${PURPLE}${_shell_name} ${_shell_ver}${ENDC} ${GRAY}─${ENDC}\n" "${_os_icon}"
+  printf "  ${GRAY}─ ${YELLOW}%s ${_os:-Linux}${ENDC} ${GRAY}·${ENDC} ${GREEN}${_kernel}${ENDC} ${GRAY}·${ENDC} ${BLUE}${XDG_CURRENT_DESKTOP:-unknown}${ENDC} ${GRAY}·${ENDC} ${PURPLE}${_shell_name} ${_shell_ver}${ENDC} ${GRAY}─${ENDC}\n" "${_os_icon}"
 }
 
 if [ -n "$PS1" ] && [[ -z "$_PROMPT_HEADER_SHOWN" ]]; then
