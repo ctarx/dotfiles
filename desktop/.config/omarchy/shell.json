@@ -4,9 +4,6 @@
     "layout": {
       "center": [
         {
-          "id": "omarchy.keyboard-layout"
-        },
-        {
           "id": "omarchy.indicators"
         },
         {
@@ -31,6 +28,9 @@
         }
       ],
       "right": [
+        {
+          "id": "omarchy.keyboard-layout"
+        },
         {
           "id": "omarchy.tray"
         },
