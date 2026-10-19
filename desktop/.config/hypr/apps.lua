@@ -1,6 +1,10 @@
 -- Desktop application window rules.
 require("hypr.apps-common")
 
+-- DP-2 owns workspaces 11-20; the bar shows them as 1-10.
+-- Override the shared chat workspace only for this desktop.
+o.window({ tag = "chat" }, { monitor = "DP-2", workspace = "11" })
+
 -- Games.
 o.window({ class = "^(steam_app.*|gamescope)$" }, { tag = "+game", workspace = "4" })
 o.window({ title = "^World of Warcraft$" }, { tag = "+game" })
