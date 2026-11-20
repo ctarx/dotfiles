@@ -1,5 +1,5 @@
--- Keep only your personal keybinding overrides here. Add new bindings or
--- unbind defaults before replacing them.
+-- Keep only your personal keybinding overrides here. Add new bindings with
+-- o.bind or replace defaults with o.rebind.
 
 -- See current bindings and descriptions:
 --   omarchy menu keybindings --print
@@ -15,35 +15,28 @@
 -- Add a new binding.
 -- o.bind("SUPER + SHIFT + R", "SSH", "alacritty -e ssh your-server")
 
--- Change an existing binding by unbinding it first, then binding the key again.
--- This example changes SUPER+SPACE from the launcher to the Omarchy root menu.
--- hl.unbind("SUPER + SPACE")
--- o.bind("SUPER + SPACE", "Omarchy menu", "omarchy-menu toggle root")
+-- Change an existing binding. o.rebind takes the same arguments as o.bind.
+-- This example replaces the default file manager with Flea.
+-- o.rebind("SUPER + SHIFT + F", "File manager", { launch = "flea" })
 
 -- Calendar web app instead of the default calendar binding.
-hl.unbind("SUPER + SHIFT + C")
-o.bind("SUPER + SHIFT + C", "Calendar", { webapp = "https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now" })
+o.rebind("SUPER + SHIFT + C", "Calendar", { webapp = "https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now" })
 
 -- FreeTube instead of the default Music binding.
-hl.unbind("SUPER + SHIFT + M")
-o.bind("SUPER + SHIFT + M", "FreeTube", { launch = "freetube" })
+o.rebind("SUPER + SHIFT + M", "FreeTube", { launch = "freetube" })
 
 -- Proton Mail instead of the default HEY binding.
-hl.unbind("SUPER + SHIFT + E")
-o.bind("SUPER + SHIFT + E", "Email", { webapp = "https://mail.proton.me/" })
+o.rebind("SUPER + SHIFT + E", "Email", { webapp = "https://mail.proton.me/" })
 
 -- Proton Pass instead of the default 1Password binding.
-hl.unbind("SUPER + SHIFT + SLASH")
-o.bind("SUPER + SHIFT + SLASH", "Proton Pass", { webapp = "https://pass.proton.me/" })
+o.rebind("SUPER + SHIFT + SLASH", "Proton Pass", { webapp = "https://pass.proton.me/" })
 
 -- Stable closes windows with SUPER+W; use SUPER+Q instead.
 hl.unbind("SUPER + W")
-hl.unbind("SUPER + Q")
-o.bind("SUPER + Q", "Close active window", hl.dsp.window.close())
+o.rebind("SUPER + Q", "Close active window", hl.dsp.window.close())
 
 -- Photos web app.
-hl.unbind("SUPER + SHIFT + P")
-o.bind("SUPER + SHIFT + P", "Photos", { webapp = "https://cloud.ctsrv.org/apps/photos/" })
+o.rebind("SUPER + SHIFT + P", "Photos", { webapp = "https://cloud.ctsrv.org/apps/photos/" })
 
 -- Disable unused default application bindings.
 hl.unbind("SUPER + SHIFT + CTRL + G")

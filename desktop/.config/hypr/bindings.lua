@@ -1,5 +1,5 @@
--- Keep only your personal keybinding overrides here. Add new bindings or
--- unbind defaults before replacing them.
+-- Keep only your personal keybinding overrides here. Add new bindings with
+-- o.bind or replace defaults with o.rebind.
 
 -- See current bindings and descriptions:
 --   omarchy menu keybindings --print
@@ -9,16 +9,16 @@
 -- only the bindings you want below:
 --   omarchy_default_bindings = false
 
--- To disable all preinstalled app/webapp bindings, set:
+-- To disable only the preinstalled app/webapp bindings, set this in the same
+-- place in ~/.config/hypr/hyprland.lua:
 --   omarchy_preinstalled_bindings = false
 
--- Add a new binding.
--- o.bind("SUPER + SHIFT + R", "SSH", "alacritty -e ssh your-server")
+-- Add a new binding. xdg-terminal-exec opens the default terminal.
+-- o.bind("SUPER + SHIFT + R", "SSH", "xdg-terminal-exec -e ssh your-server")
 
--- Change an existing binding by unbinding it first, then binding the key again.
--- This example changes SUPER+SPACE from the launcher to the Omarchy root menu.
--- hl.unbind("SUPER + SPACE")
--- o.bind("SUPER + SPACE", "Omarchy menu", "omarchy-menu toggle root")
+-- Change an existing binding. o.rebind takes the same arguments as o.bind.
+-- This example replaces the default file manager with Flea.
+-- o.rebind("SUPER + SHIFT + F", "File manager", { launch = "flea" })
 
 -- Disable a default binding without replacing it.
 -- hl.unbind("SUPER + SHIFT + B")
@@ -30,20 +30,15 @@ o.bind("SUPER + F10", "Volume up", "omarchy-audio-output-volume raise", { locked
 o.bind("SUPER + PAUSE", "Mute", "omarchy-audio-output-volume mute-toggle", { locked = true })
 o.bind("SUPER + SHIFT + PAUSE", "Switch audio output", "omarchy-audio-output-switch", { locked = true })
 
-hl.unbind("SUPER + SHIFT + C")
-o.bind("SUPER + SHIFT + C", "Calendar", { webapp = "https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now" })
+o.rebind("SUPER + SHIFT + C", "Calendar", { webapp = "https://cloud.ctsrv.org/apps/calendar/dayGridMonth/now" })
 
-hl.unbind("SUPER + SHIFT + M")
-o.bind("SUPER + SHIFT + M", "FreeTube", { launch = "freetube" })
+o.rebind("SUPER + SHIFT + M", "FreeTube", { launch = "freetube" })
 
-hl.unbind("SUPER + SHIFT + SLASH")
-o.bind("SUPER + SHIFT + SLASH", "Proton Pass", { webapp = "https://pass.proton.me/" })
+o.rebind("SUPER + SHIFT + SLASH", "Proton Pass", { webapp = "https://pass.proton.me/" })
 
-hl.unbind("SUPER + SHIFT + E")
-o.bind("SUPER + SHIFT + E", "Proton Mail", { webapp = "https://mail.proton.me/" })
+o.rebind("SUPER + SHIFT + E", "Proton Mail", { webapp = "https://mail.proton.me/" })
 
-hl.unbind("SUPER + SHIFT + P")
-o.bind("SUPER + SHIFT + P", "Photos", { webapp = "https://cloud.ctsrv.org/apps/photos/" })
+o.rebind("SUPER + SHIFT + P", "Photos", { webapp = "https://cloud.ctsrv.org/apps/photos/" })
 
 hl.unbind("SUPER + SHIFT + CTRL + G")
 hl.unbind("SUPER + SHIFT + X")
@@ -57,4 +52,4 @@ o.bind("Menu", "Omarchy menu", "omarchy-menu toggle root")
 -- Logitech MX Keys examples:
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
--- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
+-- o.bind("SUPER + PERIOD", nil, { panel = "omarchy.emojis" })
