@@ -18,6 +18,19 @@ o.window("^[Cc]urse[Ff]orge$", {
   size = { "monitor_w*0.75", "monitor_h*0.7" },
 })
 
+-- CurseForge draws its own titlebar, like Omarchy's self-framed apps.
+hl.window_rule({ match = { class = "^[Cc]urse[Ff]orge$" }, ["hyprbars:no_bar"] = true })
+
+-- Keep Steam's main window at Omarchy's previous floating size.
+o.window({ class = "^steam$", title = "^Steam$" }, {
+  float = true,
+  center = true,
+  size = { 1100, 700 },
+})
+
+-- Steam's main window already has its own titlebar.
+hl.window_rule({ match = { class = "^steam$", title = "^Steam$" }, ["hyprbars:no_bar"] = true })
+
 -- Battle.net launched through Steam. Steam gives non-Steam shortcuts a
 -- different steam_app id on each machine, so match any id by the title.
 o.window({ class = "^steam_app_.*$", title = "^Battle\\.net.*$" }, {
@@ -26,6 +39,9 @@ o.window({ class = "^steam_app_.*$", title = "^Battle\\.net.*$" }, {
   size = { 1280, 800 },
   workspace = "4",
 })
+
+-- Battle.net draws its own titlebar, like Omarchy's self-framed apps.
+hl.window_rule({ match = { class = "^steam_app_.*$", title = "^Battle\\.net.*$" }, ["hyprbars:no_bar"] = true })
 
 -- Give the Mudlet editor a larger floating window.
 o.window({ class = "^Mudlet$", title = "^Arkadia - Editor$" }, {
