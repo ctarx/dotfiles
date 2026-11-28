@@ -53,3 +53,14 @@
 --     column_width = 0.97,
 --   },
 -- })
+
+-- WoW freezes its image while audio keeps playing when direct scanout and tearing are both enabled.
+-- Disable tearing to keep direct scanout enabled; this combination worked in testing on this desktop.
+hl.config({
+  general = {
+    allow_tearing = false,
+  },
+  render = {
+    direct_scanout = 1,
+  },
+})
